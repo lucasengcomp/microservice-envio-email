@@ -10,8 +10,13 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "tb_email")
-public class Email implements Serializable {
+public class EmailEntity implements Serializable {
     private static final long serialVersionUID = 1L;
+
+    /**
+     * Let's use the name EntityEmail to not conflict with Java packages on import.
+     * And it doesn't happen like in the @javax.validation.constraints.Email annotation
+     * */
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,10 +36,10 @@ public class Email implements Serializable {
     private LocalDateTime sendDateEmail;
     private StatusEmail statusEmail;
 
-    public Email() {
+    public EmailEntity() {
     }
 
-    public Email(UUID id, String ownerRef, String emailFrom, String emailTo, String subject, String text, LocalDateTime sendDateEmail, StatusEmail statusEmail) {
+    public EmailEntity(UUID id, String ownerRef, String emailFrom, String emailTo, String subject, String text, LocalDateTime sendDateEmail, StatusEmail statusEmail) {
         this.id = id;
         this.ownerRef = ownerRef;
         this.emailFrom = emailFrom;
@@ -113,7 +118,7 @@ public class Email implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Email that = (Email) o;
+        EmailEntity that = (EmailEntity) o;
         return id.equals(that.id);
     }
 
