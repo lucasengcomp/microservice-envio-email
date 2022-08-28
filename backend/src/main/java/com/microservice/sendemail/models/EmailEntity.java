@@ -34,6 +34,7 @@ public class EmailEntity implements Serializable {
     private String text;
 
     private LocalDateTime sendDateEmail;
+
     private StatusEmail statusEmail;
 
     public EmailEntity() {

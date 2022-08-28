@@ -1,7 +1,5 @@
 package com.microservice.sendemail.dtos;
 
-import com.microservice.sendemail.models.EmailEntity;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
@@ -25,22 +23,6 @@ public class EmailDTO {
     private String text;
 
     public EmailDTO() {
-    }
-
-    public EmailDTO(String ownerRef, String emailFrom, String emailTo, String subject, String text) {
-        this.ownerRef = ownerRef;
-        this.emailFrom = emailFrom;
-        this.emailTo = emailTo;
-        this.subject = subject;
-        this.text = text;
-    }
-
-    public EmailDTO(EmailEntity email) {
-        this.ownerRef = email.getOwnerRef();
-        this.emailFrom = email.getEmailFrom();
-        this.emailTo = email.getEmailTo();
-        this.subject = email.getSubject();
-        this.text = email.getText();
     }
 
     public String getOwnerRef() {
