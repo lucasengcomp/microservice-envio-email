@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "c55d9e6c-8e50-40aa-b0d2-bd9d5e9e1ced",
+		"name": "ms-email",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5404477"
+	},
+	"item": [
+		{
+			"name": "Email",
+			"item": [
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ownerRef\" : \"Lucas Galvao\",\r\n    \"emailFrom\" : \"lugalim@gmail.com\",\r\n    \"emailTo\" : \"lucas.engcomp@outlook.com\",\r\n    \"subject\" : \"Teste de email padrão\",\r\n    \"text\" : \"Olá, tudo joia? Esse é apenas um teste de envio de email padrão. Vamos ver no que vai dar :D\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/sending-email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sending-email"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
